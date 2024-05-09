@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="ger_your_gr">Get your groceries in as fast as one hour</string>
+    <string name="welcome_to_">Welcome&#xA;to our store</string>
+    <string name="Click_me">Click Me</string>
+</resources>
