@@ -20,8 +20,9 @@ public class Login extends AppCompatActivity {
 
     private EditText password , useName;
     private Button login;
-    private ImageView passwordVisibilityToggle ;
     private TextView registration;
+
+    private ImageView password_toggel,repet_password_toggel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,12 +32,12 @@ public class Login extends AppCompatActivity {
 
         password = findViewById(R.id.input_password);
         useName = findViewById(R.id.input_field_username);
-        passwordVisibilityToggle =findViewById(R.id.password_visibility_toggle);
+     //   passwordVisibilityToggle =findViewById(R.id.password_visibility_toggle);
         login = findViewById(R.id.button_login);
         registration = findViewById(R.id.go_to_sign_up);
 
 
-        passwordVisibilityToggle.setOnClickListener(new View.OnClickListener() {
+   /*     passwordVisibilityToggle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Perform action when the icon is clicked
@@ -44,7 +45,7 @@ public class Login extends AppCompatActivity {
                 togglePasswordVisibility();
 
             }
-        });
+        });*/
 
         registration.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,25 +57,23 @@ public class Login extends AppCompatActivity {
 
     }
 
-    private void togglePasswordVisibility() {
-        EditText inputPassword = findViewById(R.id.input_password);
-        ImageView passwordVisibilityToggle = findViewById(R.id.password_visibility_toggle);
+    private void togglePasswordVisibility(ImageView imageView,EditText editText) {
 
         // Get the current inputType of the EditText
-        int inputType = inputPassword.getInputType();
+        int inputType = editText.getInputType();
 
         // Toggle the password visibility
         if (inputType == InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD) {
             // Password is currently visible, so hide it
-            inputPassword.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
-            passwordVisibilityToggle.setImageResource(R.drawable.show_password); // Change icon to hide
+            editText.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+            imageView.setImageResource(R.drawable.show_password); // Change icon to hide
         } else {
             // Password is currently hidden, so show it
-            inputPassword.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
-            passwordVisibilityToggle.setImageResource(R.drawable.unshow_pass); // Change icon to show
+            editText.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
+            imageView.setImageResource(R.drawable.unshow_pass); // Change icon to show
         }
         // Move the cursor to the end of the text in the EditText
-        inputPassword.setSelection(inputPassword.getText().length());
+        editText.setSelection(editText.getText().length());
     }
 
 
