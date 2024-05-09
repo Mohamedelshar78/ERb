@@ -14,12 +14,13 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Register extends AppCompatActivity {
 
     private EditText userName, email ,cratePassword , confirmPassword;
     private Button register;
-    private TextView sinUp;
+    private TextView sinUp, texterror,texterrorMatch;
     private ImageView createPassword_visable , repeatePassword_visable;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +33,8 @@ public class Register extends AppCompatActivity {
         confirmPassword = findViewById(R.id.input_repate_user_password);
         register = findViewById(R.id.button_register);
         sinUp = findViewById(R.id.go_to_sign_up);
+        texterror = findViewById(R.id.textinput_error);
+        texterrorMatch = findViewById(R.id.textinput_error_cant_match);
         createPassword_visable = findViewById(R.id.password_create_visibility_toggle);
         repeatePassword_visable = findViewById(R.id.password_confirm_visibility_toggle);
 
@@ -46,10 +49,10 @@ public class Register extends AppCompatActivity {
                 boolean valid = isValidPassword(s);
                 if(!valid)
                 {
-                    cratePassword.setError("invalid password");
+                    texterror.setText("your password must be 8 characters");
                 }
                 else {
-                    cratePassword.setError(null); // Clear the error if valid
+                    texterror.setText(""); // Clear the error if valid
                 }
             }
 
@@ -59,12 +62,15 @@ public class Register extends AppCompatActivity {
             }
         });
 
-
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(),Login.class);
-                startActivity(i);
+                if(cratePassword.getText() != confirmPassword.getText())
+                    Toast.makeText(getApplicationContext(),"password cant match",Toast.LENGTH_LONG).show();
+                else {
+                    Intent i = new Intent(getApplicationContext(), Login.class);
+                    startActivity(i);
+                }
             }
         });
 
