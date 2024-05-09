@@ -110,26 +110,33 @@ public class Register extends AppCompatActivity {
 
 
     public static boolean isValidPassword(CharSequence password) {
+        // Check if password length is at least 8 characters
         if (password.length() < 8) {
             return false;
         }
 
+        // Check if password contains at least one uppercase letter, one lowercase letter, and one digit
         boolean hasUppercase = false;
         boolean hasLowercase = false;
         boolean hasDigit = false;
 
-        for (int i = 0; i < password.length(); i++) {
-            char c = password.charAt(i);
+        // Check if password contains at least one special character
+        boolean hasSpecialChar = false;
+        String specialChars = "!@#$%^&*()-_=+[{]}\\|;:'\",<.>/?";
+
+        for (char c : password.toString().toCharArray()) {
             if (Character.isUpperCase(c)) {
                 hasUppercase = true;
             } else if (Character.isLowerCase(c)) {
                 hasLowercase = true;
             } else if (Character.isDigit(c)) {
                 hasDigit = true;
+            } else if (specialChars.contains(String.valueOf(c))) {
+                hasSpecialChar = true;
             }
         }
 
-        return hasUppercase && hasLowercase && hasDigit;
+        return hasUppercase && hasLowercase && hasDigit && hasSpecialChar;
     }
 
 }

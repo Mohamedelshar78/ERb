@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="23dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="60dp"
         android:gravity="center"
         android:textStyle="bold"
         android:text="Log in"
@@ -88,6 +88,8 @@
             android:layout_alignEnd="@id/input_password"
             android:layout_centerVertical="true"
             android:paddingEnd="8dp"
+            android:scaleY="0.5"
+            android:scaleX="0.7"
             android:src="@drawable/show_password"
             android:clickable="true"
             android:focusable="true" />
@@ -147,13 +149,14 @@
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp">
 
-        <ImageButton
+        <ImageView
             android:id="@+id/button_with_faceboack"
             android:layout_width="90dp"
             android:layout_height="35dp"
             android:layout_below="@+id/test_another_login"
             android:layout_marginStart="25dp"
             android:layout_weight="1"
+            android:scaleType="fitCenter"
             android:background="@drawable/input_text_filed"
             android:padding="3dp"
             android:src="@drawable/facebook_icon" />
@@ -167,17 +170,19 @@
             android:layout_marginStart="30dp"
             android:layout_marginEnd="40dp"
             android:layout_weight="1"
+            android:scaleType="fitCenter"
             android:background="@drawable/input_text_filed"
             android:padding="3dp"
             android:src="@drawable/google_icon" />
 
-        <ImageButton
+        <ImageView
             android:id="@+id/button_with_apple"
             android:layout_width="90dp"
             android:layout_height="35dp"
             android:layout_weight="1"
             android:background="@drawable/input_text_filed"
             android:padding="3dp"
+            android:scaleType="fitCenter"
             android:src="@drawable/apple_icon" />
 
     </LinearLayout>
@@ -188,7 +193,7 @@
         android:layout_marginStart="90dp"
         android:layout_below="@+id/liner_another"
         android:textAlignment="center"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="70dp"
         android:text="Don’t have an account? "
         android:lineSpacingExtra="2sp"
         android:layout_marginBottom="20dp"
@@ -202,7 +207,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/liner_another"
         android:layout_marginBottom="20dp"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="70dp"
         android:gravity="left"
         android:textColor="@color/green"
         android:lineSpacingExtra="1sp"
