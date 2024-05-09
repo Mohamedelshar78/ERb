@@ -65,8 +65,10 @@ public class Register extends AppCompatActivity {
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(cratePassword.getText() != confirmPassword.getText())
-                    Toast.makeText(getApplicationContext(),"password cant match",Toast.LENGTH_LONG).show();
+                if(cratePassword.getText() != confirmPassword.getText()) {
+                    texterrorMatch.setText("password dosen't mstch");
+                    Toast.makeText(getApplicationContext(), "password cant match", Toast.LENGTH_LONG).show();
+                }
                 else {
                     Intent i = new Intent(getApplicationContext(), Login.class);
                     startActivity(i);
