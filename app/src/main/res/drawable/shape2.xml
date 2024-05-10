@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <!-- Apply a solid color to the entire shape -->
+            <solid android:color="#F4F4F4"/>
+            <corners android:radius="8dp" />
+            <!-- Define stroke with color and width -->
+            <stroke
+                android:color="#E64646"
+                android:width="5px"/>
+        </shape>
+    </item>
+</selector>

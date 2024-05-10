@@ -1,0 +1,126 @@
+<!-- list_item_expandable.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="10dp"
+    android:orientation="vertical"
+    tools:context=".History">
+
+    <LinearLayout
+        android:id="@+id/liner_1"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:weightSum="3"
+        android:layout_marginEnd="20dp">
+    <CheckBox
+        android:id="@+id/check_deleverd"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:textColor="#999999"
+        android:text="Delivered . "/>
+    <TextView
+        android:id="@+id/delivary_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#999999"
+        android:text=" 18/4"/>
+
+    </LinearLayout>
+
+
+    <!-- Header -->
+    <RelativeLayout
+        android:id="@+id/laner2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            android:id="@+id/productname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="40dp"
+            android:padding="8dp"
+            android:textColor="#010504"
+            android:paddingEnd="50dp"
+            android:text="Ottrex 18x54 Anti pollen Mesh screen"
+            android:textSize="17sp"
+            android:textColorHint="#66000000" />
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/productname"
+            android:textColor="#999999"
+            android:layout_marginHorizontal="10dp"
+            android:text="Price: 30 L.E / meter"
+            android:textSize="17sp"
+            android:textColorHint="#66000000" />
+        <ImageView
+            android:id="@+id/showdetails"
+            android:layout_width="30dp"
+            android:layout_height="50dp"
+            android:layout_alignEnd="@id/price"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/collapce_spinner"
+            android:clickable="true"
+
+            android:focusable="true" />
+    </RelativeLayout>
+    
+    <!-- Content (Initially Hidden) -->
+    <LinearLayout
+        android:id="@+id/contentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
+        <TextView
+            android:id="@+id/quantity_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Detail 1"
+            android:padding="8dp"/>
+        <TextView
+            android:id="@+id/apllicationfess_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Detail 2"
+            android:padding="8dp"/>
+
+        <TextView
+            android:id="@+id/totalamount_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Detail 2"
+            android:padding="8dp"/>
+
+    </LinearLayout>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/before_reorder"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp">
+
+    </ImageView>
+
+    <ImageView
+        android:id="@+id/reorder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/reorder"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="20dp">
+
+    </ImageView>
+
+
+</LinearLayout>
